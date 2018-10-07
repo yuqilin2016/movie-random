@@ -178,9 +178,9 @@ ul {
   text-align: left;
 }
 
-li {
+/*li {
   margin: 40 20px;
-}
+}*/
 a {
   color:#fff;
   text-decoration: none;
@@ -196,7 +196,7 @@ a {
 
 @media screen and (max-width: 767px) {
   img.poster {
-    width: 150px;
+    width: 88%;
   }
   ul {
     padding: 0;

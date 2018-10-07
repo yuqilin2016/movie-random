@@ -135,7 +135,7 @@ a {
 
 @media screen and (max-width: 767px) {
   img.poster {
-    width: 150px;
+    width: 88%;
   }
   ul {
     padding: 0;
