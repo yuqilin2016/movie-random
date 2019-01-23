@@ -1,5 +1,6 @@
 # movie-random
-
+vue+element-ui+localStorage  
+使用豆瓣电影api,随机生成并展示电影信息（访问可能会被豆瓣api限制）
 > A Vue.js project
 
 ## Build Setup
