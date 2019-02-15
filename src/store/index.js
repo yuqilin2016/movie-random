@@ -9,14 +9,12 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		addStoreMovies (state, movie) {
-			// if (state.storeMovies)
-			let notInclude = state.storeMovies.every(function(value,index,array){
-				return array[index].id != movie.id
+			let notInclude = state.storeMovies.every(function(value){
+				return value.id != movie.id
 			})
 			if (notInclude) {
 				state.storeMovies.unshift(movie)
 				localStorage.setItem("storeMovies", JSON.stringify(state.storeMovies))
-				
 			} else {
 				return false
 			}
@@ -26,14 +24,8 @@ export default new Vuex.Store({
 			localStorage.setItem("storeMovies", JSON.stringify(state.storeMovies))
 		},
 		removeAllStoreMovies (state) {
-			// localStorage.clear()
 			state.storeMovies.splice(0)
 			localStorage.setItem("storeMovies", [])
 		}
-	},
-	// actions: {
-	// 	addStoreMovies ({commit}, movie) {
-
-	// 	}
-	// }
+	}
 })

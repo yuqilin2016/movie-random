@@ -2,7 +2,7 @@
 	<div>
     
     <div v-if="length>0">
-      <ul v-for="(movie,index) in movies" >
+      <ul v-for="(movie,index) in movies" :key="movie.id">
         <li>
           <el-row :gutter="2" >
             <el-col :lg="6" :xs="11" >
@@ -15,12 +15,12 @@
               <p><span class="hidden-sm-and-down">名称：</span>{{ movie.title }}</p>
               <p><span class="hidden-sm-and-down">评分：</span>
                 {{ movie.rating ? movie.rating : '暂无评分' }}
-                <el-rate v-show="movie.rating>0" v-model="movie.rating/2" disabled text-color="#ff9900" >
+                <el-rate v-show="movie.rating>0" :value="movie.rating/2" disabled text-color="#ff9900" >
                 </el-rate>
               </p>
               <p>
                 <span class="hidden-sm-and-down">类型：</span>
-                <span v-for="genres in movie.genres" >
+                <span v-for="genres in movie.genres" :key="genres">
                     {{ genres }}
                 </span>
               </p>
@@ -97,6 +97,10 @@ export default {
   methods: {
     toRemove (index) {
       this.$store.commit('removeStoreMovies', index)
+      this.$message({
+        message: '删除成功！',
+        type: 'success'
+      })
     },
     toRemoveAll () {
       this.dialogVisible = false
